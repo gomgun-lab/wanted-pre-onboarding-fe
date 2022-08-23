@@ -41,7 +41,6 @@ const Signup = ({ toSignin }) => {
 
     const { email, password } = formState.inputs;
 
-    console.log("signup");
     authContext.signup(email.value, password.value);
   };
 
