@@ -30,11 +30,11 @@ export class RequestService {
 
     try {
       result = await data;
-    } catch (err) {
-      if (errMessage) {
-        alert(errMessage);
+      if (!result) {
+        throw new Error(errMessage);
       }
-      console.log(err);
+    } catch (err) {
+      alert(errMessage);
     }
 
     return result;
@@ -70,12 +70,7 @@ export class RequestService {
   }
 
   async deleteRequest(route) {
-    const { data } = await axios.delete(
-      this.baseUrl + route,
-      this.requestConfig()
-    );
-
-    return data;
+    await axios.delete(this.baseUrl + route, this.requestConfig());
   }
 }
 

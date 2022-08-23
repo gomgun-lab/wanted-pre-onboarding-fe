@@ -20,8 +20,7 @@ export class TodoService extends RequestService {
   }
 
   async deleteTodo(id) {
-    const data = await this.deleteRequest(`/todos/${id}`);
-    return this.returnData(data);
+    await this.deleteRequest(`/todos/${id}`);
   }
 }
 
