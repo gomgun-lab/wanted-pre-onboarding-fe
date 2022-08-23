@@ -9,7 +9,6 @@ const StyledButton = styled.button`
   border-radius: 4px;
   background: #293462;
   color: white;
-  margin-right: 1rem;
   text-decoration: none;
   display: inline-block;
 
