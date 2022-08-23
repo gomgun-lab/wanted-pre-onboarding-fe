@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import AuthForm from "../../components/auth/AuthForm";
+import Signin from "../../components/auth/Signin";
+import Signup from "../../components/auth/Signup";
 
 const StyledAuth = styled.div`
   width: 100%;
@@ -10,20 +11,20 @@ const StyledAuth = styled.div`
 `;
 
 const Auth = () => {
-  const [isLoginMode, setIsLoginMode, resetFormData] = useState(true);
+  const [isSigninMode, setIsSigninMode] = useState(true);
 
-  const switchLoginMode = () => {
-    setIsLoginMode((prevMode) => !prevMode);
+  const switchToSignup = () => {
+    setIsSigninMode(false);
+  };
+
+  const switchToSignin = () => {
+    setIsSigninMode(true);
   };
 
   return (
     <StyledAuth>
-      <AuthForm
-        buttonChildren={isLoginMode ? "로그인" : "회원가입"}
-        spanChildren={isLoginMode ? "회원가입" : "로그인"}
-        changeMode={switchLoginMode}
-        resetForm={resetFormData}
-      />
+      {isSigninMode && <Signin toSignup={switchToSignup} />}
+      {!isSigninMode && <Signup toSignin={switchToSignin} />}
     </StyledAuth>
   );
 };
