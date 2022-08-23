@@ -20,8 +20,6 @@ const formReducer = (state, action) => {
         },
         isValid: formIsValid,
       };
-    case "INPUT_RESET":
-      return { inputs: "", isValid: false };
     default:
       return state;
   }
@@ -42,11 +40,7 @@ const useForm = (initialInputs, initialFormValidity) => {
     });
   }, []);
 
-  const resetFormData = useCallback(() => {
-    dispatch({ type: "INPUT_RESET" });
-  }, []);
-
-  return [formState, changeHandler, resetFormData];
+  return [formState, changeHandler];
 };
 
 export default useForm;
