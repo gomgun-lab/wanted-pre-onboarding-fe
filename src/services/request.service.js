@@ -1,8 +1,8 @@
 import axios from "axios";
 import { getAccessToken } from "../util/token";
 
-const BASE_URL =
-  "https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/";
+const BASE_URL = "https://n38lcff1wk.execute-api.ap-northeast-2.amazonaws.com/";
+// "https://5co7shqbsf.execute-api.ap-northeast-2.amazonaws.com/production/";
 
 export class RequestService {
   baseUrl = BASE_URL;
