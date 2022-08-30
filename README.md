@@ -12,7 +12,7 @@ npm start
 
 ## 배포 주소
 
-https://wanted-pre-onboarding-fe-one.vercel.app/
+https://wanted-pre-onboarding-fe-ten.vercel.app/
 
 ## skills
 
